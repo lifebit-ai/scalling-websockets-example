@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Example of how to scale web sockets using redis as pub sub message borker and nginx as load balancer.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Rúben Gomes <ruben@lifebit.ai> (https://github.com/rubengomex)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.4.1",
+    "socket.io-redis": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11"
+  }
+}
