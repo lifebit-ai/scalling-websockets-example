@@ -4,7 +4,7 @@ Short example of how to scale web sockets using [socket io](https://socket.io/),
 
 ## How to run
 
-First you need have install [Docker](https://www.docker.com/) and docker-compose utility for you to be able build the backend image and run the application inside of containers.
+First you need have install [Docker](https://www.docker.com/) and docker-compose utility for you to be able to build the backend image and run the example.
 
 To build the backend image you need to run the following command:
 
