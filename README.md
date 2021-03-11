@@ -49,7 +49,13 @@ Now you can try to send a chat message on both window consoles executing this co
 ws.emit('chat', "Hello! I'm client")
 ```
 
-You will notice that both messages will appear despite that we have multiple servers, and each message containes the APP_ID respectively of who was the sender :)
+You will notice that both messages will appear despite that we have multiple servers, and each message contains the APP_ID respectively of who was the sender and the socket set on the query property when initializing the socket on the frontend :)
+
+Something like:
+
+```bash
+Hello! I'm client with token: my-token
+```
 
 The command is sending a `chat` event to the ws server which is listening to that event and broadcasts another `chat-message` event but only for the clients ws that joined to a room name `chat`.
 

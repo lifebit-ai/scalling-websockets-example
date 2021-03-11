@@ -17,7 +17,7 @@ io.on('connection', (socket) => {
   socket.join('chat', () => console.log(`Server ${APP_ID} join successfully to chat room!`))
   socket.on('chat', (message) => {
     console.log(`server ${APP_ID} received a message`)
-    io.to('chat').emit('chat-message', `${APP_ID}: ${message}`)
+    io.to('chat').emit('chat-message', `${APP_ID}: ${message} with token: ${socket.handshake.query.token}`)
   })
 
   socket.once('disconnect', () => {
@@ -31,7 +31,7 @@ app.get('/', (_, res) => {
       <body>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
       <script>
-        const ws = io('http://localhost:8080', { transports: ['websocket'] })
+        const ws = io('http://localhost:8080', { query: { token: 'my-token' },  transports: ['websocket'] })
         ws.on('connect', () => console.log('ws connected'))
         ws.on('chat-message', message => console.log(message))
       </script>
